@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>Question 1 (b)</title>
+</head>
+
+<style>
+
+#show_div, #hide_div {
+  width: 100px;
+  height: 40px;
+  border-radius: 14px;
+  color: white;
+  background-color: blue;
+  display: block;
+
+}
+
+#anElement {
+  margin-top: 20px;
+  min-width: 10px;
+  float: left:
+  margin-left: 0px;
+  max-width: 150px;
+  min-height: 200px;
+  background-color: red;
+}
+
+</style>
+
+<body>
+  <button id="show_div" onclick="toggle();">show/hide</button>
+  <div id="anElement">Test</div>
+</body>
+
+<script>
+
+var counter = 0;
+
+function toggle() {
+  if(counter % 2 == 0) {
+      showDiv();
+  }
+  else{
+    hideDiv();
+  }
+  counter++;
+  console.log(counter);
+}
+
+function showDiv() {
+  document.getElementById("anElement").style.display = "block"
+}
+
+function hideDiv() {
+  document.getElementById("anElement").style.display = "none"
+}
+
+</script>
+
+</html>
