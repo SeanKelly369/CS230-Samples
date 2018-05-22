@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Question 2 (c)1</title>
+</head>
+
+<body onload="readCookie();">
+
+  <div id="overlay">
+    <div id="notice_box">In order to use this site, please accept terms of service
+      <br>
+      <button id="feckoff"><a href="http://www.kelly3d.com/wp" target="_blank">Feck off</a></button>
+      <button id="accept" onclick="writeCookie();">Accept</button>
+    </div>
+  </div>
+
+</body>
+
+<script>
+  function writeCookie() {
+    document.getElementById("notice_box").style.display = 'none';
+    document.getElementById("overlay").style.display = "none";
+    document.cookie = "status=accepted";
+    alert(document.cookie); //cookies are dated, I can only get them to work in Firefox.  Use sessionstorage and localstorage instead
+  }
+
+  function readCookie() {
+    if (document.cookie = "NULL") {
+      document.getElementById("notice_box").style.display = 'block';
+    } else {
+      document.getElementById("notice_box").style.display = 'none';
+      document.getElementById("overlay").style.display = "none";
+    }
+  }
+
+</script>
+
+<style>
+
+  #overlay {
+    z-index: 1px;
+    position: fixed;
+    background-color: #ccc;
+    /* Black background with opacity */
+    width: 100%;
+    height: 100%;
+  }
+
+  #notice_box {
+    z-index: 2;
+    /* the z-index gives the div a depth, in this case it is above the rest of the content  */
+    /* Most of the CSS isn't needed, I only added it to make the code look decent */
+    text-align: center;
+    font-size: 12px;
+    padding: 12px;
+    width: 240px;
+    height: 83px;
+    margin: auto;
+    margin-top: 80px;
+    background-color: #ededed;
+    display: block;
+    border-radius: 8px;
+  }
+
+  #accept {
+    margin-top: 30px;
+    width: 80px;
+    height: 20px;
+    background-color: lightblue;
+    color: white;
+  }
+
+  #feckoff {
+    float: right;
+    margin-top: 30px;
+    margin-right: 26px;
+    min-width: 80px;
+    height: 20px;
+    background-color: lightblue;
+    color: white;
+  }
+
+</style>
+
+
+</html>
