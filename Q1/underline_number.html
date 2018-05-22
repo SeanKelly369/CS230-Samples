@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Underline Numbers</title>
+</head>
+
+<body>
+
+	<button onclick="changeAll()"> Underline number </button>
+
+	<div id="text"> <br> There are 7 words in this sentence!
+	</div>
+
+</body>
+
+<script>
+	function changeAll() {
+
+		var original = document.getElementById("text").innerHTML;
+		var output = "";
+
+		for (i = 0; i < original.length; i++) {
+
+			if (original[i].match(/\d+/))
+				output += "<u>" + original[i] + "</u>";
+			else {
+				output += original[i];
+			}
+		}
+
+		document.getElementById("text").innerHTML = output;
+	}
+</script>
+
+</html>
